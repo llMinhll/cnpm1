@@ -2,22 +2,36 @@ const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema(
   {
-    full_name: { type: String },
-    email: { type: String, required: true, unique: true },
-    password: { type: String, required: true }, // bcrypt hash
-    role: { type: String, default: "admin" } // có thể: admin / driver / customer
-  },
-  { timestamps: true }
-);
+    full_name: {
+      type: String,
+      required: true,
+      trim: true,
+    },
 
-UserSchema.set("toJSON", {
-  virtuals: true,
-  versionKey: false,
-  transform: (_, ret) => {
-    ret.id = ret._id;
-    delete ret._id;
-    delete ret.password; // ẩn mật khẩu
-  }
-});
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      lowercase: true,
+    },
+
+    password: {
+      type: String,
+      required: true,
+    },
+
+    phone: {
+      type: String,
+      default: "",
+    },
+
+    role: {
+      type: String,
+      enum: ["user", "admin"],
+      default: "user",
+    },
+  },
+  { timestamps: true } // tự thêm createdAt & updatedAt
+);
 
 module.exports = mongoose.model("User", UserSchema);

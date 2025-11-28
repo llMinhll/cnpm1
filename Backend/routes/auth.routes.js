@@ -13,7 +13,7 @@ const router = express.Router();
  */
 router.post("/register", async (req, res) => {
   try {
-    const { full_name, email, password } = req.body;
+    const { full_name, email, password, phone } = req.body;
 
     const exists = await User.findOne({ email });
     if (exists) {
@@ -25,7 +25,10 @@ router.post("/register", async (req, res) => {
     const user = await User.create({
       full_name,
       email,
-      password: hashed
+      password: hashed,
+      phone,
+      phone,
+      role: "user",
     });
 
     const token = jwt.sign(
