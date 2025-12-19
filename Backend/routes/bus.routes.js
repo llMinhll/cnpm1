@@ -128,5 +128,42 @@ router.get("/positions", async (req, res) => {
     res.status(500).json({ error: "Server error" });
   }
 });
+/**
+ * POST /api/buses/update-position
+ * Body: { bus_id, lat, lng, speed }
+ */
+router.post("/update-position", async (req, res) => {
+  try {
+    const { bus_id, lat, lng, speed } = req.body;
+    if (!bus_id || !lat || !lng) {
+      return res.status(400).json({ error: "Thiếu bus_id, lat, hoặc lng" });
+    }
+
+    const bus = await Bus.findById(bus_id).populate("route");
+    if (!bus) return res.status(404).json({ error: "Không tìm thấy xe" });
+
+    bus.lat = lat;
+    bus.lng = lng;
+    bus.speed = speed || 0;
+    await bus.save();
+
+    // Emit WebSocket
+    const io = req.app.get("io");
+    io.emit("bus_position", {
+      id: bus.id,
+      plate: bus.plate,
+      route_id: bus.route?.id,
+      route_code: bus.route?.code,
+      lat,
+      lng,
+      speed,
+    });
+
+    res.json({ message: "Updated", bus_id: bus.id });
+  } catch (err) {
+    console.error("update-position error:", err);
+    res.status(500).json({ error: "Server error" });
+  }
+});
 
 module.exports = router;

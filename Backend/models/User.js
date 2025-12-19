@@ -27,8 +27,12 @@ const UserSchema = new mongoose.Schema(
 
     role: {
       type: String,
-      enum: ["user", "admin"],
+      enum: ["user", "driver", "admin"],
       default: "user",
+    },
+    is_active: {
+      type: Boolean,
+      default: true,
     },
   },
   { timestamps: true } // tự thêm createdAt & updatedAt
