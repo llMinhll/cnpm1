@@ -1,0 +1,39 @@
+### Đăng ký
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+  "full_name": "Admin",
+  "email": "admin@gmail.com",
+  "password": "123456"
+}
+
+### Đăng nhập
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@gmail.com",
+  "password": "123456"
+}
+
+### Kiểm tra token
+GET http://localhost:3000/api/auth/me
+Authorization: Bearer PASTE_TOKEN_HERE
+
+### Kiểm tra token (ví dụ)
+GET http://localhost:3000/api/auth/me
+Authorization: Bearer <token>
+### Đăng ký với vai trò admin
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+  "full_name": "admin2",
+  "email": "admin1@gmail.com",
+  "password": "123456",
+  "role": "admin",
+  "phone": "0123456789",
+  "address": "Đà Nẵng",
+  "birthday": "2000-01-01"
+}

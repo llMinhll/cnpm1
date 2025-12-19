@@ -1,0 +1,103 @@
+/* ====== NỀN ====== */
+.profile-container {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #eef6ff 0%, #d9ecff 100%);
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+/* ====== CARD ====== */
+.profile-card {
+  width: 100%;
+  max-width: 600px;
+  background: #fff;
+  border-radius: 25px;
+  padding: 40px 45px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* ====== AVATAR ====== */
+.profile-avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: #1e90ff;
+  color: white;
+  font-size: 42px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+}
+
+/* ====== TÊN ====== */
+.profile-name {
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* ====== VAI TRÒ ====== */
+.profile-role {
+  font-size: 17px;
+  color: #e04a4a;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+/* ====== BLOCK THÔNG TIN ====== */
+.profile-info {
+  margin-top: 20px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #e6eef7;
+}
+
+.info-label {
+  font-weight: 600;
+  color: #333;
+}
+
+.info-value {
+  color: #444;
+}
+
+/* ====== NÚT LOGOUT ====== */
+.logout-btn {
+  width: 100%;
+  padding: 15px;
+  background: #1e90ff;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  margin-top: 35px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.logout-btn:hover {
+  background: #e04a4a;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

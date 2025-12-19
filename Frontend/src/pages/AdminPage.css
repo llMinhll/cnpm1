@@ -1,0 +1,309 @@
+/* ROOT BACKGROUND */
+.admin-root {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #e0f2fe 0%, #f8fafc 60%, #f1f5f9 100%);
+}
+
+/* PAGE WRAPPER */
+.admin-wrapper {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 30px 16px 60px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #0f172a;
+}
+
+/* ===========================
+   HEADER / APPBAR
+=========================== */
+.admin-appbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.admin-logo {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1e3a8a; /* blue-900 */
+}
+
+.admin-subtitle {
+  font-size: 14px;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+.admin-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.1); /* blue-600 10% */
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.admin-chip-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #22d3ee; /* cyan-400 */
+}
+
+/* ===========================
+   GREETING CARD
+=========================== */
+.admin-greeting-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 22px 24px;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 10px 35px rgba(37, 99, 235, 0.08);
+  margin-bottom: 26px;
+}
+
+.admin-greeting-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1e3a8a;
+}
+
+.admin-greeting-text {
+  font-size: 14px;
+  color: #475569;
+  margin-top: 4px;
+}
+
+.admin-greeting-pill {
+  align-self: center;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.12);
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ===========================
+   GRID LAYOUT
+=========================== */
+.admin-maingrid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 22px;
+}
+
+@media (max-width: 900px) {
+  .admin-maingrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===========================
+   CARD
+=========================== */
+.admin-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px 24px 26px;
+  box-shadow: 0 15px 40px rgba(15, 23, 42, 0.05);
+}
+
+/* Card header */
+.admin-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.admin-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e3a8a;
+}
+
+.admin-card-sub {
+  font-size: 13px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+/* ===========================
+   FORM
+=========================== */
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.admin-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.admin-field span {
+  color: #475569;
+}
+
+.admin-field input,
+.admin-field select {
+  border-radius: 12px;
+  border: 1px solid #dbeafe;
+  padding: 10px 12px;
+  font-size: 14px;
+  outline: none;
+  background: #f8fafc;
+  transition: border 0.15s ease, box-shadow 0.15s ease;
+}
+
+.admin-field input:focus,
+.admin-field select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
+}
+
+/* BUTTON MAIN */
+.admin-btn-primary {
+  margin-top: 4px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.admin-btn-primary:hover {
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+  transform: translateY(-2px);
+}
+
+.admin-btn-primary:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+/* ===========================
+   ALERTS
+=========================== */
+.admin-alert {
+  margin-top: 8px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.admin-alert.success {
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+
+.admin-alert.error {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* ===========================
+   FILTER CHIPS
+=========================== */
+.admin-filter-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.admin-filter-label {
+  font-size: 13px;
+  color: #475569;
+}
+
+.admin-chip-filter {
+  border-radius: 999px;
+  border: 1px solid #dbeafe;
+  padding: 6px 12px;
+  font-size: 12.5px;
+  background: #ffffff;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.12s ease;
+}
+
+.admin-chip-filter.active {
+  background: #dbeafe;
+  border-color: #2563eb;
+  color: #1e3a8a;
+  font-weight: 600;
+}
+
+.admin-chip-filter:hover {
+  background: #eff6ff;
+}
+
+/* ===========================
+   TABLE
+=========================== */
+.admin-table-wrapper {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-top: 6px;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.admin-table thead {
+  background: #f1f5f9;
+}
+
+/* Delete button */
+.admin-btn-danger {
+  border: none;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #ef4444;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.12s ease;
+}
+
+.admin-btn-danger:hover {
+  background: #dc2626;
+  transform: translateY(-1px);
+}
+
+/* Empty list message */
+.admin-empty {
+  padding: 14px;
+  text-align: center;
+  font-size: 14px;
+  color: #64748b;
+}
